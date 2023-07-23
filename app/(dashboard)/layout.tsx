@@ -1,11 +1,18 @@
+import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidebar";
+
 const DashboardLayout = ({
     children
 }: {
     children: React.ReactNode
 }) => {
     return (
-        <div className="flex items-center justify-center h-screen">
-            {children}
+        <div className="h-full relative">
+            <Sidebar />
+            <main className="md:pl-72">
+                <Navbar />
+                {children}
+            </main>
         </div>
     )
 }
