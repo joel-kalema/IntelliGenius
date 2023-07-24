@@ -1,16 +1,12 @@
+"use client"
+
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { ArrowRight, Code, ImageIcon, MessageSquare, Music, VideoIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
 const tools = [
-    {
-        label: "Dashboard",
-        icon: LayoutDashboard,
-        href: "/dashboard",
-        color: "text-sky-500",
-        bgColor: "text-sky-500/10"
-    },
     {
         label: "Conversation",
         icon: MessageSquare,
@@ -47,15 +43,19 @@ const tools = [
 ]
 
 export default function DashboardPage() {
+
+    const router = useRouter();
+
     return (
         <div>
             <div>
-                <h2 className="font-extrabold text-2xl ml-10">Explore the Power of AI</h2>
-                <p className="text-sm ml-10 mt-2 mb-4">Chat with the smartest - Experiance the power of AI</p>
+                <h2 className="font-extrabold text-2xl ml-4 md:ml-20 lg:ml-32">Explore the Power of AI</h2>
+                <p className="text-sm ml-4 md:ml-20 lg:ml-32 mt-2 mb-10">Chat with the smartest - Experiance the power of AI</p>
             </div>
-            <div className="px-10 space-y-4">
+            <div className="px-4 md:px-20 lg:px-32 space-y-4">
                 {tools.map((tool) => (
                     <Card
+                        onClick={() => router.push(tool.href)}
                         key={tool.href}
                         className="p-4 boder-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
                     >
