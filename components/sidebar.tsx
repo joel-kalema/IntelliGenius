@@ -58,7 +58,7 @@ const routes = [
 
 const Sidebar = () => {
     return(
-        <div className="hidden md:w-72 h-full md:fixed md:flex md:flex-col text-white bg-gray-900 z-[80] md:inset-y-0">
+        <div className="space-y-4 py-4 flex flex-col h-full text-white bg-gray-900">
             <div className="px-3 py-2 flex-1">
                 <Link href="/dashboard" className="flex items-center mb-14 pl-3">
                     <div className="relative w-8 h-8 mr-4">
